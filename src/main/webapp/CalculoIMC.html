@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -20,36 +20,20 @@ function calcula_imc(){
 var calculo = (peso/quadrado);
 formulario.calculo.value = calculo.toFixed(2);
 
-  if(calculo<19.1 && sexo =="Feminino" ){
-    alert("Você está abaixo do peso : " + calculo);
+  if(calculo<18.5){
+    alert("Voce esta abaixo do peso : " + calculo.toFixed(2));
   }
-  else if(calculo<20.7 && sexo =='Masculino' ){
-    alert("Você está abaixo do peso! IMC = "+calculo);
+  else if(calculo>=18.5 && calculo<24.9){
+    alert("Voce esta normal com esse indice: " + calculo.toFixed(2));
   }
-  else if(calculo>=19.1 && calculo<25.8 && sexo =="Feminino"){
-    alert("Você está normal com esse indice: " + calculo);
+  else if(calculo>=24.9 && calculo<29.9) {
+    alert("Voce esta com sobre peso com esse indice: " + calculo.toFixed(2));
   }
-  else if(calculo>=20.7 && calculo<26.4 && sexo=="Masculino"){
-    alert("Você está normal com esse indice: " + calculo);
+   else if(calculo>=29.9 && calculo<40) {
+    alert("Voce esta com obesidade com esse indice: " + calculo.toFixed(2));
   }
-
-  else if(calculo>=25.8 && calculo<27.3 && sexo=="Feminino") {
-    alert("Você está com sobre peso com esse indice: " + calculo);
-  }
-   else if(calculo>=26.4 && calculo<27.8 && sexo=="Masculino") {
-    alert("Você está com sobre peso com esse indice: " + calculo);
-  }
-  else if(calculo>=27.3 && calculo<=32.3 && sexo=="Feminino") {
-    alert("Você está com obesidade com esse indice: " + calculo);
-  }
-   else if(calculo>=27.8 && calculo<=31.1 && sexo=="Masculino") {
-    alert("Você está com obesidade com esse indice: " + calculo);
-  }
-  else if (calculo>32.3 && sexo=="Feminino"){
-    alert("Você estácom obesidade grave com esse indice: " + calculo);
-  }
-  else if (calculo>31.1 && sexo=="Masculino"){
-    alert("Você estácom obesidade grave com esse indice: " + calculo);
+  else if (calculo>=40){
+    alert("Voce esta com obesidade grave com esse indice: " + calculo.toFixed(2));
   }
 }
 </script>
