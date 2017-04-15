@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    
+<title>Calculo IMC</title>
+<script type="text/javascript">
+function calcula_imc(){
+  var formulario = document.getElementById("formulario");
+  var altura = +formulario.altura.value;
+  var peso = +formulario.peso.value;
+  var sexo = +formulario.sexo.value;
+
+  var quadrado = (altura * altura);
+
+var calculo = (peso/quadrado);
+formulario.calculo.value = calculo.toFixed(2);
+
+  if(calculo<19.1 && sexo =="Feminino" ){
+    alert("Você está abaixo do peso : " + calculo);
+  }
+  else if(calculo<20.7 && sexo =='Masculino' ){
+    alert("Você está abaixo do peso! IMC = "+calculo);
+  }
+  else if(calculo>=19.1 && calculo<25.8 && sexo =="Feminino"){
+    alert("Você está normal com esse indice: " + calculo);
+  }
+  else if(calculo>=20.7 && calculo<26.4 && sexo=="Masculino"){
+    alert("Você está normal com esse indice: " + calculo);
+  }
+
+  else if(calculo>=25.8 && calculo<27.3 && sexo=="Feminino") {
+    alert("Você está com sobre peso com esse indice: " + calculo);
+  }
+   else if(calculo>=26.4 && calculo<27.8 && sexo=="Masculino") {
+    alert("Você está com sobre peso com esse indice: " + calculo);
+  }
+  else if(calculo>=27.3 && calculo<=32.3 && sexo=="Feminino") {
+    alert("Você está com obesidade com esse indice: " + calculo);
+  }
+   else if(calculo>=27.8 && calculo<=31.1 && sexo=="Masculino") {
+    alert("Você está com obesidade com esse indice: " + calculo);
+  }
+  else if (calculo>32.3 && sexo=="Feminino"){
+    alert("Você estácom obesidade grave com esse indice: " + calculo);
+  }
+  else if (calculo>31.1 && sexo=="Masculino"){
+    alert("Você estácom obesidade grave com esse indice: " + calculo);
+  }
+}
+</script>
+  </head>
+     <style>
+
+    body{
+      text-align: center;
+      font-family: Arial;
+      font-size: 15pt;
+    }
+  </style>
+
+  <body>
+
+    
+
+      <form class="form-control" id="formulario">
+        <h2 class="form-signin-heading">Calculo IMC</h2>
+        
+        <fieldset class="form-group">
+        
+        <div class="Peso">
+        <label for="peso" class"sr-only">Peso</label>
+        <input type="text" name="peso" class="form-control" placeholder="Digite o peso" required autofocus/>
+        
+
+        <div class="Altura">
+        <label for="atura" class"sr-only">Altura</label>
+        <input type="text"  name="altura" class="form-control" placeholder="Digite a altura" required/>
+        
+
+        <div class="Sexo">
+        <label for="sexo" class"sr-only">Sexo</label>
+        <input type="text" name="sexo" class="form-control"  placeholder="Digite o sexo" required/>
+        
+        </p>
+
+        <label for="calculo">IMC:</label>
+        <input type="text" name="calculo" class="form-control" disabled="disabled" />
+        <a href="#" onclick="calcula_imc();">Calcular</a>  
+        </fieldset>
+        </div>
+       
+       
+      </form>
+  
+   </body>
+</html>
